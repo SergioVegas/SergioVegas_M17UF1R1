@@ -41,11 +41,29 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: 1Sky
+    uniqueID: 672345175
+    locked: 0
   - name: Background
     uniqueID: 2158677175
     locked: 0
-  - name: Props
-    uniqueID: 125746399
+  - name: 2Mountain
+    uniqueID: 1794129607
+    locked: 0
+  - name: 3NearMountain
+    uniqueID: 1478913649
+    locked: 0
+  - name: 4Towers
+    uniqueID: 1791476245
+    locked: 0
+  - name: 5FarCity
+    uniqueID: 915308175
+    locked: 0
+  - name: 6FrontCity
+    uniqueID: 268415039
+    locked: 0
+  - name: Player
+    uniqueID: 146841959
     locked: 0
   - name: Foreground
     uniqueID: 324875603
