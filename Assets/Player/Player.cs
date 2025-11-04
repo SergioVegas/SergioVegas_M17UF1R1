@@ -26,9 +26,12 @@ public class Player : MonoBehaviour
         _animator.SetFloat("Velocity", _rb.linearVelocityX);
         _csdb.ChangeSpriteDirectionWithChangeGravity(_rb.linearVelocityX, gravityFlipped);
 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _cg.IsGrounded())
         {
+            
+            _animator.SetTrigger("Jump");
             _cg.ChangeGravity(ref gravityFlipped);
         }
+       
     }
 }
