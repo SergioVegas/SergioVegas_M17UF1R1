@@ -3,6 +3,8 @@ using UnityEngine;
 public class ChangeGravityBehavior : MonoBehaviour
 {
     private Rigidbody2D _rb;
+    [SerializeField] private LayerMask Ground;
+    [SerializeField] private float groundCheckDistance = 1.5f;
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -11,10 +13,15 @@ public class ChangeGravityBehavior : MonoBehaviour
     { 
         gravityFlipped = !gravityFlipped;
 
-        Physics2D.gravity = new Vector2(0, gravityFlipped ? 9.81f : -9.81f);
+        _rb.gravityScale *= -1f;
 
-        transform.Rotate(0f, 0f, 180f);
+        transform.rotation = Quaternion.Euler(0f, 0f, gravityFlipped ? 180f : 0f);
 
         _rb.linearVelocity = new Vector2(_rb.linearVelocityX, -_rb.linearVelocityY);
+    }
+    public bool IsGrounded()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.up, groundCheckDistance, Ground);
+        return hit.collider != null;
     }
 }
