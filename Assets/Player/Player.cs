@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     public void Update()
     {
         _mb.MoveCharacterHorizontal(new Vector2(Input.GetAxis("Horizontal"), 0), speed);
-        _animator.SetFloat("Velocity", _rb.linearVelocityX);
+        _animator.SetFloat("Velocity", Mathf.Abs(_rb.linearVelocityX));
         _csdb.ChangeSpriteDirectionWithChangeGravity(_rb.linearVelocityX, gravityFlipped);
 
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _cg.IsGrounded())
