@@ -11,9 +11,10 @@ public class Player : MonoBehaviour
     protected MoveBehavior _mb;
     protected float speed = 5;
     private bool gravityFlipped = false;
-    [SerializeField] protected Animator _animator;
+    protected Animator _animator;
     private void Awake()
     {
+        _animator = GetComponent<Animator>();
         _csdb = GetComponent<ChangeSpriteDirectionBehavior>();
         _mb = GetComponent<MoveBehavior>();
         _cg = GetComponent<ChangeGravityBehavior>();
@@ -25,13 +26,18 @@ public class Player : MonoBehaviour
         _mb.MoveCharacterHorizontal(new Vector2(Input.GetAxis("Horizontal"), 0), speed);
         _animator.SetFloat("Velocity", Mathf.Abs(_rb.linearVelocityX));
         _csdb.ChangeSpriteDirectionWithChangeGravity(_rb.linearVelocityX, gravityFlipped);
-
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _cg.IsGrounded())
+        if(_cg.IsGrounded())
         {
-            
-            _animator.SetTrigger("Jump");
-            _cg.ChangeGravity(ref gravityFlipped);
-        }
-       
+            if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
+            {
+                _animator.SetTrigger("Jump");
+                _cg.ChangeGravity(ref gravityFlipped);
+            }
+            Debug.Log("SALTOOOOO");
+            _animator.SetBool("Grounded", true);
+        } 
+        else
+            _animator.SetBool("Grounded", false);
+
     }
 }
