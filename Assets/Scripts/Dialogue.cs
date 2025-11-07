@@ -12,11 +12,11 @@ public class Dialogue : MonoBehaviour
 
     private float readDelay = 1.2f;
     private float typingTime = 0.05f;
-    private bool isPlayerInRange;
-    private bool didDialogueStart;
+    private bool isPlayerInRange = false;
+    private bool didDialogueStart = false;
     private int lineIndex;
-    private bool hasDialogueFinished;
-    private bool isLineFullyDisplayed;
+    private bool hasDialogueFinished = false;
+    private bool isLineFullyDisplayed = false;
 
 
     private void Update()
