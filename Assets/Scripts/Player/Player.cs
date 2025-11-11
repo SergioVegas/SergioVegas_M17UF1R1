@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(MoveBehavior))]
 [RequireComponent(typeof(ChangeSpriteDirectionBehavior))]
 [RequireComponent(typeof(ChangeGravityBehavior))]
-public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions
+public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammageable
 {
     protected ChangeSpriteDirectionBehavior _csdb;
     private Rigidbody2D _rb;
@@ -47,7 +47,12 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions
             _actions.Disable();
         else _actions.Enable();
     }
-    
+    public void Die()
+    {
+        _animator.SetTrigger("Death");
+        _actions.Disable();
+    }
+
 
     public void OnMove(InputAction.CallbackContext context)
     {
