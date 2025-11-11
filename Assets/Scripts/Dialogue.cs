@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 using System.Collections.Generic;
 using System.Collections;
 
@@ -8,7 +9,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField, TextArea(4, 6)] private string[] dialogueLines;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text dialogueText;
-
+    public static event Action<bool> PausePlayer = delegate { };
 
     private float readDelay = 1.2f;
     private float typingTime = 0.05f;
@@ -51,6 +52,7 @@ public class Dialogue : MonoBehaviour
 
     private void StartDialogue()
     {
+        PausePlayer.Invoke(true);
         didDialogueStart = true;
         dialoguePanel.SetActive(true);
         lineIndex = 0;
@@ -71,6 +73,7 @@ public class Dialogue : MonoBehaviour
             hasDialogueFinished = true; 
             dialoguePanel.SetActive(false);
             Time.timeScale = 1f;
+            PausePlayer.Invoke(false);
         }
     }
 
