@@ -4,7 +4,7 @@ public class ChangeGravityBehavior : MonoBehaviour
 {
     private Rigidbody2D _rb;
     [SerializeField] private LayerMask Ground;
-    [SerializeField] private float groundCheckDistance = 1.5f;
+    private float groundCheckDistance = 2f;
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
