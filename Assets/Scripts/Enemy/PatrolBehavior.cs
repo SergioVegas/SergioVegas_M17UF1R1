@@ -2,24 +2,27 @@ using UnityEngine;
 
 public class PatrolBehavior : MonoBehaviour
 {
+    public float raycastDistance = 1f; 
+    public LayerMask groundLayer;
     private Rigidbody2D _rb;
-    public float speed = 3f;
-    private int _direction = 1;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
     }
-    public void EnemyPatrol(float _enemyLimitPositionXPositive, float _enemyLimitPositionXNegative)
+    public void Patrol(Transform groundCheck)
     {
-        if (transform.position.x >= _enemyLimitPositionXPositive)
+        Debug.Log(IsGrounded(groundCheck));
+        if (!IsGrounded(groundCheck))
         {
-            _direction = -1;
-        }
-        else if (transform.position.x <= _enemyLimitPositionXNegative)
-        {
-            _direction = 1;
-        }
-
-        _rb.linearVelocity = new Vector2(_direction * speed, _rb.linearVelocityY);
+            _rb.linearVelocity = new Vector2((_rb.linearVelocity.x* -1),_rb.linearVelocity.y);
+        }   
+    }
+    public bool IsGrounded(Transform groundCheck)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(groundCheck.position, -groundCheck.transform.up, raycastDistance, groundLayer);
+        Debug.DrawLine(groundCheck.position, groundCheck.position -groundCheck.transform.up *raycastDistance);
+        return hit.collider != null;
     }
 }
+    

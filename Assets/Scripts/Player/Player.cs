@@ -51,6 +51,13 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
     {
         _animator.SetTrigger("Death");
         _actions.Disable();
+        GetComponent<CapsuleCollider2D>().enabled = false;
+    }
+    public void Respawn()
+    {
+        _animator.SetTrigger("Respawn");
+        _actions.Enable();
+        GetComponent<CapsuleCollider2D>().enabled = true;
     }
 
 

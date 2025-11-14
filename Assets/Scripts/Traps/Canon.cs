@@ -5,12 +5,15 @@ public class Canon : MonoBehaviour
 {
     [SerializeField] private GameObject _gameObjecjtBullet;
     [SerializeField] private Transform _shootPoint;
-    [SerializeField] private float _bulletdirection; //-1 to go left, 1 to go rigth
+    private float _bulletdirection; 
     public Stack<GameObject> BulletStack = new Stack<GameObject>();
     private float timeSpawn = 2f;
     private float _nextSpawnTime = 0f;
-   
-   
+
+    private void Awake()
+    {
+        _bulletdirection = -transform.localScale.x; // - Porque el cañon  esta en el lado contrario a la dirección en la que queremos que se dirija.
+    }
     void Update()
     {
         if (Time.time >= _nextSpawnTime)
@@ -48,5 +51,6 @@ public class Canon : MonoBehaviour
     {
         GameObject bullet = Instantiate(_gameObjecjtBullet, _shootPoint.position, Quaternion.identity);
         bullet.GetComponent<Bullet>().canon = this;
+        bullet.GetComponent<Rigidbody2D>().linearVelocityX = 5f * _bulletdirection;
     }
 }
