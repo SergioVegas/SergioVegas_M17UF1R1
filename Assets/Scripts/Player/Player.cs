@@ -14,7 +14,6 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
     protected float speed = 5;
     private bool gravityFlipped = false;
     protected Animator _animator;
-    
     private float horizontalVelocity;
     private InputSystem_Actions _actions;
     private void Awake()

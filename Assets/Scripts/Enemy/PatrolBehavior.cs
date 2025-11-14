@@ -12,7 +12,6 @@ public class PatrolBehavior : MonoBehaviour
     }
     public void Patrol(Transform groundCheck)
     {
-        Debug.Log(IsGrounded(groundCheck));
         if (!IsGrounded(groundCheck))
         {
             _rb.linearVelocity = new Vector2((_rb.linearVelocity.x* -1),_rb.linearVelocity.y);
