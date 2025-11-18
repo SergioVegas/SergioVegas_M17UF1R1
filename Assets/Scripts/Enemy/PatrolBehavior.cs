@@ -20,7 +20,7 @@ public class PatrolBehavior : MonoBehaviour
     public bool IsGrounded(Transform groundCheck)
     {
         RaycastHit2D hit = Physics2D.Raycast(groundCheck.position, -groundCheck.transform.up, raycastDistance, groundLayer);
-        //Debug.DrawLine(groundCheck.position, groundCheck.position -groundCheck.transform.up *raycastDistance);
+        //Debug.DrawLine(groundCheck.position, groundCheck.position -groundCheck.transform.up * raycastDistance);
         return hit.collider != null;
     }
 }
