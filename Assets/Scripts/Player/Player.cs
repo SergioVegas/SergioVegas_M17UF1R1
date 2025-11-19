@@ -14,7 +14,6 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
     protected float speed = 5;
     private bool gravityFlipped = false;
     protected Animator _animator;
-    
     private float horizontalVelocity;
     private InputSystem_Actions _actions;
     private void Awake()
@@ -51,6 +50,13 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
     {
         _animator.SetTrigger("Death");
         _actions.Disable();
+        GetComponent<CapsuleCollider2D>().enabled = false;
+    }
+    public void Respawn()
+    {
+        _animator.SetTrigger("Respawn");
+        _actions.Enable();
+        GetComponent<CapsuleCollider2D>().enabled = true;
     }
 
 
