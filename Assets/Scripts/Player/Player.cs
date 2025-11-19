@@ -16,6 +16,7 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
     protected Animator _animator;
     private float horizontalVelocity;
     private InputSystem_Actions _actions;
+    public static event Action UsePauseMenu = delegate { };
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -85,19 +86,20 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
     {
         throw new NotImplementedException();
     }
-
     public void OnEscape(InputAction.CallbackContext context)
     {
-        throw new NotImplementedException();
+        UsePauseMenu.Invoke();
     }
     public void OnEnable()
     {
         _actions.Enable();
         Dialogue.PausePlayer += ControlInputs;
+        PauseMenu.PausePlayer += ControlInputs;
     }
     public void OnDisable()
     {
         Dialogue.PausePlayer -= ControlInputs;
+        PauseMenu.PausePlayer -= ControlInputs;
         _actions.Disable();
     }
 }

@@ -113,7 +113,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Escape"",
                     ""type"": ""Button"",
-                    ""id"": ""fb4efd70-b574-4201-b812-44bc5692a536"",
+                    ""id"": ""e3f687c8-5aaa-4620-9b7a-e146886432a8"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -277,7 +277,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""041e4a46-fccf-4e1f-8ff7-580cc474cbee"",
+                    ""id"": ""d2622578-43b1-4ae2-acd5-6e4798f2b415"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
