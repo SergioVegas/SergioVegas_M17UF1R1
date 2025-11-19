@@ -20,7 +20,7 @@ public class PauseMenu : MonoBehaviour
         PausePlayer.Invoke(true);
         gamePaused = true;
         Time.timeScale = 0f;
-        pauseMenu.SetActive(true);
+        pauseMenu.SetActive(true); 
     }
     public void Resume()
     {
@@ -53,6 +53,14 @@ public class PauseMenu : MonoBehaviour
     {
         Player.UsePauseMenu += OnUsePauseMenu;
     }
-
-  
+    private void OnDisable()
+    {
+        Player.UsePauseMenu -= OnUsePauseMenu;
+    }
+    private void OnDestroy()
+    {
+        Player.UsePauseMenu -= OnUsePauseMenu;
+    }
 }
+
+
