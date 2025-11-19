@@ -102,4 +102,10 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
         PauseMenu.PausePlayer -= ControlInputs;
         _actions.Disable();
     }
+    private void OnDestroy()
+    {
+        Dialogue.PausePlayer -= ControlInputs;
+        PauseMenu.PausePlayer -= ControlInputs;
+        _actions.Disable();
+    }
 }

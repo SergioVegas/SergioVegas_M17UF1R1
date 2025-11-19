@@ -5,16 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-   [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject pauseMenu;
     private bool gamePaused = false;
     public static event Action<bool> PausePlayer = delegate { };
-    private void Awake()
-    {
-       /* if (pauseMenu == null)
-        {
-            pauseMenu = GameObject.Find("Panel");
-        }*/
-    }
     public void Pause()
     {
         PausePlayer.Invoke(true);
@@ -53,6 +46,12 @@ public class PauseMenu : MonoBehaviour
     {
         Player.UsePauseMenu += OnUsePauseMenu;
     }
-
-  
+    private void OnDisable()
+    {
+        Player.UsePauseMenu -= OnUsePauseMenu;
+    }
+    private void OnDestroy()
+    {
+        Player.UsePauseMenu -= OnUsePauseMenu;
+    }
 }
