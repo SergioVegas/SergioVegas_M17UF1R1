@@ -52,6 +52,7 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
         _animator.SetTrigger("Death");
         _actions.Disable();
         GetComponent<CapsuleCollider2D>().enabled = false;
+        _rb.gravityScale= 0; //Para que no salga despedido hacia abajo
     }
     public void Respawn()
     {
