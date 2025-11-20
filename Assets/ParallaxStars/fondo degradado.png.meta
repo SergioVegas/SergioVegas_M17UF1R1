@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 829695b7af58cf44dae0ec297ed58de7
+guid: bd11e4a58b3b52f4f917f3f63426b7f4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5130558894233647175
-    second: Fondo_0
+      213: -8114850699899840317
+    second: fondo degradado_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fondo_0
+      name: fondo degradado_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 4000
-        height: 2000
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b78bf95ed79cc8b0800000000000000
-      internalID: -5130558894233647175
+      spriteID: 3c8d3236842426f80800000000000000
+      internalID: -8114850699899840317
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fondo_0: -5130558894233647175
+      fondo degradado_0: -8114850699899840317
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

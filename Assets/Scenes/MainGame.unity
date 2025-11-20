@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab534c8bdf8a784e8845989eed1cc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
+  _camera: {fileID: 519420028}
   parallaxEffect: 0.5
 --- !u!1 &78556053
 GameObject:
@@ -613,7 +613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab534c8bdf8a784e8845989eed1cc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
+  _camera: {fileID: 519420028}
   parallaxEffect: 0.7
 --- !u!1 &258117369
 GameObject:
@@ -717,7 +717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab534c8bdf8a784e8845989eed1cc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
+  _camera: {fileID: 519420028}
   parallaxEffect: 0.8
 --- !u!1 &265279999
 GameObject:
@@ -1293,7 +1293,7 @@ Transform:
   m_GameObject: {fileID: 445769760}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.0087, y: -0.05793895, z: 0}
+  m_LocalPosition: {x: 29.32, y: -0.05793895, z: 0}
   m_LocalScale: {x: 0.9884, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1594,7 +1594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab534c8bdf8a784e8845989eed1cc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
+  _camera: {fileID: 519420028}
   parallaxEffect: 0.2
 --- !u!1 &494580042
 GameObject:
@@ -1763,7 +1763,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.46526, y: 18.060625, z: -10}
+  m_LocalPosition: {x: 27.236174, y: 18.04358, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1903,7 +1903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab534c8bdf8a784e8845989eed1cc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
+  _camera: {fileID: 519420028}
   parallaxEffect: 0.5
 --- !u!1 &542870396
 GameObject:
@@ -2044,7 +2044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab534c8bdf8a784e8845989eed1cc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
+  _camera: {fileID: 519420028}
   parallaxEffect: 0.9
 --- !u!212 &618943632
 SpriteRenderer:
@@ -2358,6 +2358,7 @@ Transform:
   m_LocalScale: {x: 0.7998, y: 0.8225, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1849511318}
   - {fileID: 1375140429}
   m_Father: {fileID: 2025328837}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.869}
@@ -2373,7 +2374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab534c8bdf8a784e8845989eed1cc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
+  _camera: {fileID: 519420028}
   parallaxEffect: 0.7
 --- !u!1 &750196029
 GameObject:
@@ -2401,7 +2402,7 @@ Transform:
   m_GameObject: {fileID: 750196029}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.901907, y: 0, z: 0}
+  m_LocalPosition: {x: 18.94, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2687,7 +2688,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 793175547}
-  - component: {fileID: 793175548}
   m_Layer: 0
   m_Name: BigAsteroids
   m_TagString: Untagged
@@ -2713,20 +2713,6 @@ Transform:
   - {fileID: 812263330}
   m_Father: {fileID: 494580043}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &793175548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793175546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cab534c8bdf8a784e8845989eed1cc8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
-  parallaxEffect: 0.5
 --- !u!1 &812263328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2828,7 +2814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab534c8bdf8a784e8845989eed1cc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
+  _camera: {fileID: 519420028}
   parallaxEffect: 0.4
 --- !u!1 &833258017
 GameObject:
@@ -8212,8 +8198,7 @@ Transform:
   m_LocalPosition: {x: -35.8009, y: 0.507703, z: 0}
   m_LocalScale: {x: 1.2503045, y: 1.2158132, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1849511318}
+  m_Children: []
   m_Father: {fileID: 734932384}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1375140430
@@ -8724,7 +8709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab534c8bdf8a784e8845989eed1cc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
+  _camera: {fileID: 519420028}
   parallaxEffect: 0
 --- !u!1 &1506854597
 GameObject:
@@ -8808,8 +8793,8 @@ Transform:
   m_GameObject: {fileID: 1506854597}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.4553, y: 3.202, z: 0.13207605}
-  m_LocalScale: {x: 1.5264963, y: 1.4152995, z: 1}
+  m_LocalPosition: {x: 6.4553, y: 2.78, z: 0.13207605}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1592862279}
@@ -8828,7 +8813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab534c8bdf8a784e8845989eed1cc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
+  _camera: {fileID: 519420028}
   parallaxEffect: 1
 --- !u!1 &1508153017
 GameObject:
@@ -9240,7 +9225,7 @@ Transform:
   m_GameObject: {fileID: 1592862278}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.0294, y: -0.02, z: 0}
+  m_LocalPosition: {x: -29.37, y: -0.02, z: 0}
   m_LocalScale: {x: 0.9885, y: 0.9951, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9403,7 +9388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab534c8bdf8a784e8845989eed1cc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
+  _camera: {fileID: 519420028}
   parallaxEffect: 0.9
 --- !u!1 &1624694976
 GameObject:
@@ -9542,7 +9527,7 @@ Transform:
   m_GameObject: {fileID: 1624694976}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.45, y: 15.86, z: 0}
+  m_LocalPosition: {x: 27.22, y: 15.71, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10084,7 +10069,7 @@ Transform:
   m_GameObject: {fileID: 1752582164}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.45, y: 15.86, z: -10}
+  m_LocalPosition: {x: 27.22, y: 15.71, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10309,12 +10294,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849511317}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 59.700005, y: 0.025683815, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.007580137, w: 0.9999713}
+  m_LocalPosition: {x: 38.83418, y: -0.59265244, z: 0}
+  m_LocalScale: {x: 1.2503045, y: 1.215813, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1375140429}
+  m_Father: {fileID: 734932384}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1849511319
 SpriteRenderer:
@@ -10473,7 +10458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab534c8bdf8a784e8845989eed1cc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
+  _camera: {fileID: 519420028}
   parallaxEffect: 0.5
 --- !u!1 &1875774600
 GameObject:
@@ -10609,7 +10594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab534c8bdf8a784e8845989eed1cc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
+  _camera: {fileID: 519420028}
   parallaxEffect: 0.7
 --- !u!212 &1926045525
 SpriteRenderer:
@@ -11347,7 +11332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab534c8bdf8a784e8845989eed1cc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
+  _camera: {fileID: 519420028}
   parallaxEffect: 0.8
 --- !u!4 &2115022732 stripped
 Transform:
@@ -11543,7 +11528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab534c8bdf8a784e8845989eed1cc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
+  _camera: {fileID: 519420028}
   parallaxEffect: 0.4
 --- !u!1001 &1815053504099371467
 PrefabInstance:
