@@ -27,7 +27,6 @@ public class Canon : MonoBehaviour
             else
             {
                 Pop();
-                Debug.Log("Nos gusta reciclar");
             }
             _nextSpawnTime = Time.time + timeSpawn;
         }
