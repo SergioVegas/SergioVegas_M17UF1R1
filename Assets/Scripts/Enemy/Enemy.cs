@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     const int minRand = 1, maxRand = 4;
     private Rigidbody2D _rb;
     protected Animator _animator;
+    private bool _canAttack = true;
 
     private void Awake()
     {
@@ -42,8 +43,12 @@ public class Enemy : MonoBehaviour
         speed = speed == speedMinValue ? speedMaxValue : speedMinValue;
         InvokeStopOrContinue();
     }
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-
+        if (collision.transform.TryGetComponent<IDammageable>(out IDammageable iDmg) && _canAttack)
+        {
+            iDmg.Die();
+            _canAttack = false;
+        }
     }
 }

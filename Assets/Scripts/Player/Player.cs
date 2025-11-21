@@ -17,6 +17,7 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
     private float horizontalVelocity;
     private InputSystem_Actions _actions;
     public static event Action UsePauseMenu = delegate { };
+    public static event Action UseGameOverMenu = delegate { };
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -52,14 +53,21 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
         _animator.SetTrigger("Death");
         _actions.Disable();
         GetComponent<CapsuleCollider2D>().enabled = false;
+        _rb.gravityScale= 0; //Para que no salga despedido hacia abajo 
+        Invoke(nameof(ExecuteGameOver), 2.5f);
+        _rb.bodyType = RigidbodyType2D.Static;
     }
     public void Respawn()
     {
         _animator.SetTrigger("Respawn");
         _actions.Enable();
         GetComponent<CapsuleCollider2D>().enabled = true;
+        _rb.bodyType = RigidbodyType2D.Dynamic;
     }
-
+    private void ExecuteGameOver()
+    {
+        UseGameOverMenu.Invoke();
+    }
 
     public void OnMove(InputAction.CallbackContext context)
     {
