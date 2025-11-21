@@ -55,12 +55,14 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
         GetComponent<CapsuleCollider2D>().enabled = false;
         _rb.gravityScale= 0; //Para que no salga despedido hacia abajo 
         Invoke(nameof(ExecuteGameOver), 2.5f);
+        _rb.bodyType = RigidbodyType2D.Static;
     }
     public void Respawn()
     {
         _animator.SetTrigger("Respawn");
         _actions.Enable();
         GetComponent<CapsuleCollider2D>().enabled = true;
+        _rb.bodyType = RigidbodyType2D.Dynamic;
     }
     private void ExecuteGameOver()
     {
