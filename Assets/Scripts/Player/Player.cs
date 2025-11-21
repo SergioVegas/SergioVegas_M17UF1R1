@@ -53,7 +53,7 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
         _animator.SetTrigger("Death");
         _actions.Disable();
         GetComponent<CapsuleCollider2D>().enabled = false;
-        _rb.gravityScale= 0; //Para que no salga despedido hacia abajo 
+        UseAudioManger(AudioClips.DeathSound);
         Invoke(nameof(ExecuteGameOver), 2.5f);
         _rb.bodyType = RigidbodyType2D.Static;
     }
@@ -76,6 +76,7 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
         {
             if (context.ReadValue<Vector2>().y!=0)
             {
+                UseAudioManger(AudioClips.ChangeGravity);
                 _animator.SetTrigger("Jump");
                 _cg.ChangeGravity(ref gravityFlipped);
             }
@@ -115,5 +116,15 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
         Dialogue.PausePlayer -= ControlInputs;
         PauseMenu.PausePlayer -= ControlInputs;
         _actions.Disable();
+    }
+    private void UseAudioManger(AudioClips audioName)
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+
+        if (AudioManager.Instance.clipList.TryGetValue(audioName, out AudioClip clip))
+        {
+            audioSource.clip = clip;
+            audioSource.Play();
+        }
     }
 }

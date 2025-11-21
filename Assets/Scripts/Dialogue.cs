@@ -10,7 +10,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField, TextArea(4, 6)] private string[] dialogueLines;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text dialogueText;
-    [SerializeField] private Image _image;
+    //[SerializeField] private Image _image;
     public static event Action<bool> PausePlayer = delegate { };
 
     private float readDelay = 1.2f;
