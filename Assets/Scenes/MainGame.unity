@@ -884,6 +884,7 @@ GameObject:
   - component: {fileID: 169155426}
   - component: {fileID: 169155425}
   - component: {fileID: 169155424}
+  - component: {fileID: 169155428}
   m_Layer: 5
   m_Name: WinMenu
   m_TagString: Untagged
@@ -974,6 +975,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &169155428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169155422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72517e83e8a5f284d8963a31f284f2de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winMenu: {fileID: 836506710}
 --- !u!4 &173047305 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 135664032458345937, guid: 52a5b7ab0c3b5ad4da7987b67422bc20, type: 3}
@@ -3364,7 +3378,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.634926, y: 18.373203, z: -10}
+  m_LocalPosition: {x: -31.309011, y: -1.0304008, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4677,8 +4691,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameOverMenu, Assembly-CSharp
+      - m_Target: {fileID: 169155428}
+        m_TargetAssemblyTypeName: WinMenu, Assembly-CSharp
         m_MethodName: CloseGame
         m_Mode: 1
         m_Arguments:
@@ -6531,6 +6545,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FinalDialogue
       objectReference: {fileID: 0}
+    - target: {fileID: 6363743087306305974, guid: 81c626df8f91a844e9e13a7b8d2b6df8, type: 3}
+      propertyPath: m_TagString
+      value: Finish
+      objectReference: {fileID: 0}
     - target: {fileID: 7549958845570558974, guid: 81c626df8f91a844e9e13a7b8d2b6df8, type: 3}
       propertyPath: _image
       value: 
@@ -6770,8 +6788,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameOverMenu, Assembly-CSharp
+      - m_Target: {fileID: 169155428}
+        m_TargetAssemblyTypeName: WinMenu, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
@@ -33622,7 +33640,7 @@ Transform:
   m_GameObject: {fileID: 1624694976}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.89, y: 15.68, z: 0}
+  m_LocalPosition: {x: -31.3, y: -1.4, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34668,7 +34686,7 @@ Transform:
   m_GameObject: {fileID: 1752582164}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.89, y: 15.68, z: -10}
+  m_LocalPosition: {x: -31.3, y: -1.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

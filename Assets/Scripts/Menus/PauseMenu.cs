@@ -32,6 +32,7 @@ public class PauseMenu : MonoBehaviour
     public void CloseGame()
     {
         Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false;
         Debug.Log("Closed");
     }
     public void OnUsePauseMenu()

@@ -3,15 +3,17 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOverMenu : MonoBehaviour
+public class WinMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject gameOverMenu;
-   
+    [SerializeField] private GameObject winMenu;
+    public static event Action<bool> PausePlayer = delegate { };
+
     public void Restart()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        gameOverMenu.SetActive(false);
+        PausePlayer.Invoke(false);
+        winMenu.SetActive(false);
     }
     public void CloseGame()
     {
@@ -19,21 +21,22 @@ public class GameOverMenu : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
         Debug.Log("Closed");
     }
-    public void OnUseGameOverMenu()
+    public void OnUsWinMenu()
     {
-        gameOverMenu.SetActive(true);
+        winMenu.SetActive(true);
+        PausePlayer.Invoke(true);
         Time.timeScale = 0;
     }
     private void OnEnable()
     {
-        Player.UseGameOverMenu += OnUseGameOverMenu;
+        Player.UseWinMenu += OnUsWinMenu;
     }
     private void OnDisable()
     {
-        Player.UseGameOverMenu -= OnUseGameOverMenu;
+        Player.UseWinMenu -= OnUsWinMenu;
     }
     private void OnDestroy()
     {
-        Player.UseGameOverMenu -= OnUseGameOverMenu;
+        Player.UseWinMenu -= OnUsWinMenu;
     }
 }

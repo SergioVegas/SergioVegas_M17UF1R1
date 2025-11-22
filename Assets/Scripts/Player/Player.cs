@@ -17,6 +17,7 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
     private float horizontalVelocity;
     private InputSystem_Actions _actions;
     public static event Action UsePauseMenu = delegate { };
+    public static event Action UseWinMenu = delegate { };
     public static event Action UseGameOverMenu = delegate { };
     private void Awake()
     {
@@ -104,18 +105,33 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
         _actions.Enable();
         Dialogue.PausePlayer += ControlInputs;
         PauseMenu.PausePlayer += ControlInputs;
+        WinMenu.PausePlayer += ControlInputs;
     }
     public void OnDisable()
     {
         Dialogue.PausePlayer -= ControlInputs;
         PauseMenu.PausePlayer -= ControlInputs;
+        WinMenu.PausePlayer -= ControlInputs;
         _actions.Disable();
     }
     private void OnDestroy()
     {
         Dialogue.PausePlayer -= ControlInputs;
         PauseMenu.PausePlayer -= ControlInputs;
+        WinMenu.PausePlayer -= ControlInputs;
         _actions.Disable();
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Finish"))
+        {
+            UseAudioManger(AudioClips.FinalEncounter);
+            Invoke(nameof(TriggerWinMenu), 0.1f);
+        }
+    }
+    private void TriggerWinMenu()
+    {
+        UseWinMenu.Invoke();
     }
     private void UseAudioManger(AudioClips audioName)
     {
