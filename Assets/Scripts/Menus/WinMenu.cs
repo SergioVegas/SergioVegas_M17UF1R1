@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class WinMenu : MonoBehaviour
 {
     [SerializeField] private GameObject winMenu;
-    public static event Action<bool> PausePlayer = delegate { };
 
+    public static event Action RestartCheckPoint = delegate { };
+    public static event Action<bool> PausePlayer = delegate { };
     public void Restart()
     {
         Time.timeScale = 1f;
+        RestartCheckPoint.Invoke();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         PausePlayer.Invoke(false);
         winMenu.SetActive(false);
@@ -18,7 +20,6 @@ public class WinMenu : MonoBehaviour
     public void CloseGame()
     {
         Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
         Debug.Log("Closed");
     }
     public void OnUsWinMenu()

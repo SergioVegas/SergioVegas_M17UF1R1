@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     private bool gamePaused = false;
     public static event Action<bool> PausePlayer = delegate { };
+    public static event Action RestartCheckPoint = delegate { };
     public void Pause()
     {
         PausePlayer.Invoke(true);
@@ -27,12 +28,12 @@ public class PauseMenu : MonoBehaviour
         PausePlayer.Invoke(false);
         gamePaused = false;
         Time.timeScale = 1f;
+        RestartCheckPoint.Invoke();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void CloseGame()
     {
         Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
         Debug.Log("Closed");
     }
     public void OnUsePauseMenu()

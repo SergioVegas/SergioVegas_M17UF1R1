@@ -39,7 +39,6 @@ public class Enemy : MonoBehaviour
     }
     public void StopOrContinue()
     {
-
         speed = speed == speedMinValue ? speedMaxValue : speedMinValue;
         InvokeStopOrContinue();
     }

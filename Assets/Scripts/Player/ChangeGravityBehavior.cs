@@ -4,7 +4,7 @@ public class ChangeGravityBehavior : MonoBehaviour
 {
     private Rigidbody2D _rb;
     [SerializeField] private LayerMask Ground;
-    private float groundCheckDistance = 2f;
+    private float groundCheckDistance = 1.5f;
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -17,7 +17,7 @@ public class ChangeGravityBehavior : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0f, 0f, gravityFlipped ? 180f : 0f);
 
-        _rb.linearVelocity = new Vector2(_rb.linearVelocityX, -_rb.linearVelocityY);
+        _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0f);
     }
     public bool IsGrounded()
     {
