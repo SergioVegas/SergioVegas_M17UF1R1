@@ -2,7 +2,8 @@
 
 ## Inputs
 
-Sutilitcen tant les tecles wasd com les fleches per moures, per canviar de gravetat es por fer amb la flecha cap a dalt o amb la w.
+S'utilitzen tant les tecles wasd com les fletxes per moure's, per canviar de gravetat es pot fer amb la fletxa cap a dalt o amb la w.
+S'ha de començar però l'escena de MainMenu.
 
 ## Descripció joc
 
