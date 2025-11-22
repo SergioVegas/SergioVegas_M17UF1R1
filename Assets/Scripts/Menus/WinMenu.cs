@@ -14,7 +14,7 @@ public class WinMenu : MonoBehaviour
         Time.timeScale = 1f;
         RestartCheckPoint.Invoke();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        PausePlayer.Invoke(false);
+        PausePlayer.Invoke(true);
         winMenu.SetActive(false);
     }
     public void CloseGame()
