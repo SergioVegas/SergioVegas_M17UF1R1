@@ -60,7 +60,6 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
     }
     public void Respawn()
     {
-        _animator.SetTrigger("Respawn");
         _actions.Enable();
         GetComponent<CapsuleCollider2D>().enabled = true;
         _rb.bodyType = RigidbodyType2D.Dynamic;
@@ -86,20 +85,11 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
         else
             _animator.SetBool("Grounded", false);
     }
-
-    public void OnInteract(InputAction.CallbackContext context)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnJump(InputAction.CallbackContext context)
-    {
-        throw new NotImplementedException();
-    }
     public void OnEscape(InputAction.CallbackContext context)
     {
         UsePauseMenu.Invoke();
     }
+
     public void OnEnable()
     {
         _actions.Enable();

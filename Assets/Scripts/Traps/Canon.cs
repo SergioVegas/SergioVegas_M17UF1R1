@@ -5,10 +5,12 @@ public class Canon : MonoBehaviour
 {
     [SerializeField] private GameObject _gameObjecjtBullet;
     [SerializeField] private Transform _shootPoint;
+    [SerializeField] private float speedProjectile = 5f;
+    [SerializeField] private float timeSpawn = 2f;
     private float _bulletdirection; 
     public Stack<GameObject> BulletStack = new Stack<GameObject>();
-    private float timeSpawn = 2f;
     private float _nextSpawnTime = 0f;
+    
 
     private void Awake()
     {
@@ -42,7 +44,7 @@ public class Canon : MonoBehaviour
         go.SetActive(true);
         go.GetComponent<Collider2D>().enabled = true;
         go.transform.position = _shootPoint.position;
-        go.GetComponent<Rigidbody2D>().linearVelocityX = 5f* _bulletdirection;
+        go.GetComponent<Rigidbody2D>().linearVelocityX = speedProjectile * _bulletdirection;
         return go;
     }
 
@@ -50,6 +52,6 @@ public class Canon : MonoBehaviour
     {
         GameObject bullet = Instantiate(_gameObjecjtBullet, _shootPoint.position, Quaternion.identity);
         bullet.GetComponent<Bullet>().canon = this;
-        bullet.GetComponent<Rigidbody2D>().linearVelocityX = 5f * _bulletdirection;
+        bullet.GetComponent<Rigidbody2D>().linearVelocityX = speedProjectile * _bulletdirection;
     }
 }
