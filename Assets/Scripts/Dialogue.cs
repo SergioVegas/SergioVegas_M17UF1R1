@@ -10,7 +10,8 @@ public class Dialogue : MonoBehaviour
     [SerializeField, TextArea(4, 6)] private string[] dialogueLines;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text dialogueText;
-    [SerializeField] private Image _image;
+    [SerializeField] private Image dialogueImage;
+    [SerializeField] private Sprite dialogueSprite;
     public static event Action<bool> PausePlayer = delegate { };
 
     private float readDelay = 1.2f;
@@ -20,6 +21,7 @@ public class Dialogue : MonoBehaviour
     private int lineIndex;
     private bool hasDialogueFinished = false;
     private bool isLineFullyDisplayed = false;
+
 
 
     private void Update()
@@ -59,6 +61,11 @@ public class Dialogue : MonoBehaviour
         dialoguePanel.SetActive(true);
         lineIndex = 0;
         Time.timeScale = 0f;
+        if (dialogueImage != null && dialogueSprite != null)
+        {
+            dialogueImage.sprite = dialogueSprite;
+            dialogueImage.enabled = true;
+        } 
         StartCoroutine(ShowLine());
     }
 

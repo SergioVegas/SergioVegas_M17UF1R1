@@ -17,6 +17,7 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
     private float horizontalVelocity;
     private InputSystem_Actions _actions;
     public static event Action UsePauseMenu = delegate { };
+    public static event Action UseWinMenu = delegate { };
     public static event Action UseGameOverMenu = delegate { };
     private void Awake()
     {
@@ -53,7 +54,7 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
         _animator.SetTrigger("Death");
         _actions.Disable();
         GetComponent<CapsuleCollider2D>().enabled = false;
-        _rb.gravityScale= 0; //Para que no salga despedido hacia abajo 
+        UseAudioManger(AudioClips.DeathSound);
         Invoke(nameof(ExecuteGameOver), 2.5f);
         _rb.bodyType = RigidbodyType2D.Static;
     }
@@ -76,6 +77,7 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
         {
             if (context.ReadValue<Vector2>().y!=0)
             {
+                UseAudioManger(AudioClips.ChangeGravity);
                 _animator.SetTrigger("Jump");
                 _cg.ChangeGravity(ref gravityFlipped);
             }
@@ -103,17 +105,42 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
         _actions.Enable();
         Dialogue.PausePlayer += ControlInputs;
         PauseMenu.PausePlayer += ControlInputs;
+        WinMenu.PausePlayer += ControlInputs;
     }
     public void OnDisable()
     {
         Dialogue.PausePlayer -= ControlInputs;
         PauseMenu.PausePlayer -= ControlInputs;
+        WinMenu.PausePlayer -= ControlInputs;
         _actions.Disable();
     }
     private void OnDestroy()
     {
         Dialogue.PausePlayer -= ControlInputs;
         PauseMenu.PausePlayer -= ControlInputs;
+        WinMenu.PausePlayer -= ControlInputs;
         _actions.Disable();
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Finish"))
+        {
+            UseAudioManger(AudioClips.FinalEncounter);
+            Invoke(nameof(TriggerWinMenu), 0.1f);
+        }
+    }
+    private void TriggerWinMenu()
+    {
+        UseWinMenu.Invoke();
+    }
+    private void UseAudioManger(AudioClips audioName)
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+
+        if (AudioManager.Instance.clipList.TryGetValue(audioName, out AudioClip clip))
+        {
+            audioSource.clip = clip;
+            audioSource.Play();
+        }
     }
 }

@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     public void CloseGame()
     {
         Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false;
         Debug.Log("Closed");
     }
 }
