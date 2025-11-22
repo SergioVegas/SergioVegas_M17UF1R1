@@ -3,7 +3,7 @@
 ## Inputs
 
 S'utilitzen tant les tecles wasd com les fletxes per moure's, per canviar de gravetat es pot fer amb la fletxa cap a dalt o amb la w.
-S'ha de començar però l'escena de MainMenu.
+El executable esta dins de la carpeta BuildGame.
 
 ## Descripció joc
 
