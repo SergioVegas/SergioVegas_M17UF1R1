@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameOverMenu : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverMenu;
-   
+    public static event Action RestartCheckPoint = delegate { };
     public void TryAgain()
     {
         Time.timeScale = 1f;
@@ -16,6 +16,7 @@ public class GameOverMenu : MonoBehaviour
     }
     public void CloseGame()
     {
+        RestartCheckPoint.Invoke();
         Application.Quit();
         Debug.Log("Closed");
     }

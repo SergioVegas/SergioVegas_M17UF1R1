@@ -19,6 +19,7 @@ public class WinMenu : MonoBehaviour
     }
     public void CloseGame()
     {
+        RestartCheckPoint.Invoke();
         Application.Quit();
         Debug.Log("Closed");
     }
