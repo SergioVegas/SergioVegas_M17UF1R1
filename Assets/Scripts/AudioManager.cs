@@ -4,7 +4,8 @@ using UnityEngine;
 public enum AudioClips
 {
     ChangeGravity,
-    DeathSound, 
+    DeathSound,
+    FinalEncounter
 }
 
 public class AudioManager : MonoBehaviour
@@ -20,6 +21,6 @@ public class AudioManager : MonoBehaviour
         Instance = this;
         clipList.Add(AudioClips.ChangeGravity, audioClips[0]);
         clipList.Add(AudioClips.DeathSound, audioClips[1]);
+        clipList.Add(AudioClips.FinalEncounter, audioClips[2]);
     }
-
 }
