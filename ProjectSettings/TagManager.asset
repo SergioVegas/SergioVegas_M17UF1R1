@@ -65,6 +65,9 @@ TagManager:
   - name: Player
     uniqueID: 146841959
     locked: 0
+  - name: Lasers
+    uniqueID: 112036837
+    locked: 0
   - name: Foreground
     uniqueID: 324875603
     locked: 0
