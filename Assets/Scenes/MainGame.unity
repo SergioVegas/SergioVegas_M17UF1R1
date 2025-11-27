@@ -169,9 +169,7 @@ PrefabInstance:
       objectReference: {fileID: 6531124222608737580, guid: 175a067da948c784091e520b52a58144, type: 3}
     - target: {fileID: 7549958845570558974, guid: 81c626df8f91a844e9e13a7b8d2b6df8, type: 3}
       propertyPath: 'dialogueLines.Array.data[0]'
-      value: '.....
-
-        QUE VOY A HACER?!'
+      value: ".....\n\xA1\xBFQUE VOY A HACER?!"
       objectReference: {fileID: 0}
     - target: {fileID: 7549958845570558974, guid: 81c626df8f91a844e9e13a7b8d2b6df8, type: 3}
       propertyPath: 'dialogueLines.Array.data[1]'
@@ -4606,15 +4604,15 @@ PrefabInstance:
       objectReference: {fileID: -7498882376371319944, guid: 433400628ce854f4c993e986c886a9af, type: 3}
     - target: {fileID: 7549958845570558974, guid: 81c626df8f91a844e9e13a7b8d2b6df8, type: 3}
       propertyPath: 'dialogueLines.Array.data[0]'
-      value: "ENCONTRARLO! HACED LO QUE HAGA FALTA, PERO NO LO DEJ\xC9IS ESCAPAR."
+      value: "\xA1ENCONTRARLO! HACED LO QUE HAGA FALTA, PERO NO LO DEJ\xC9IS ESCAPAR."
       objectReference: {fileID: 0}
     - target: {fileID: 7549958845570558974, guid: 81c626df8f91a844e9e13a7b8d2b6df8, type: 3}
       propertyPath: 'dialogueLines.Array.data[1]'
-      value: "NO QUIERO VER A NADIE PARADO, ME ENTEND\xC9IS?"
+      value: "\xBFNO QUIERO VER A NADIE PARADO, ME ENTEND\xC9IS?"
       objectReference: {fileID: 0}
     - target: {fileID: 7549958845570558974, guid: 81c626df8f91a844e9e13a7b8d2b6df8, type: 3}
       propertyPath: 'dialogueLines.Array.data[2]'
-      value: '
+      value: '.....
 
         Bueno, al menos sabemos donde esta uno de los dos....'
       objectReference: {fileID: 0}
@@ -6841,15 +6839,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7549958845570558974, guid: 81c626df8f91a844e9e13a7b8d2b6df8, type: 3}
       propertyPath: 'dialogueLines.Array.data[2]'
-      value: 'COMO HA PODIDO PASAR ESTO!
-
-        TODO POR DEJARLO SOLO!
-
-'
+      value: "\xA1COMO HA PODIDO PASAR ESTO!\n\xA1TODO POR DEJARLO SOLO!\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7549958845570558974, guid: 81c626df8f91a844e9e13a7b8d2b6df8, type: 3}
       propertyPath: 'dialogueLines.Array.data[3]'
-      value: Que voy ha hacer ahora.....
+      value: "Qu\xE9 voy ha hacer ahora...\n*Sollozo*"
       objectReference: {fileID: 0}
     - target: {fileID: 7923280373474034671, guid: 81c626df8f91a844e9e13a7b8d2b6df8, type: 3}
       propertyPath: m_LocalScale.x
