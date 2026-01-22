@@ -3,38 +3,19 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOverMenu : MonoBehaviour
+public class GameOverMenu : BaseMenu
 {
-    [SerializeField] private GameObject gameOverMenu;
-    public static event Action RestartCheckPoint = delegate { };
-    public void TryAgain()
+    private void OnEnable() 
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        gameOverMenu.SetActive(false);
-       
+        Player.UseGameOverMenu += ShowMenu;
     }
-    public void CloseGame()
+    private void OnDisable() 
     {
-        RestartCheckPoint.Invoke();
-        Application.Quit();
-        Debug.Log("Closed");
+        Player.UseGameOverMenu -= ShowMenu;
     }
-    public void OnUseGameOverMenu()
+    public void TryAgain() 
     {
-        gameOverMenu.SetActive(true);
-        Time.timeScale = 0;
-    }
-    private void OnEnable()
-    {
-        Player.UseGameOverMenu += OnUseGameOverMenu;
-    }
-    private void OnDisable()
-    {
-        Player.UseGameOverMenu -= OnUseGameOverMenu;
-    }
-    private void OnDestroy()
-    {
-        Player.UseGameOverMenu -= OnUseGameOverMenu;
+        Restart();
+        HideMenu();
     }
 }

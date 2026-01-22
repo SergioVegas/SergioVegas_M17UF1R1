@@ -94,21 +94,19 @@ public class Player : MonoBehaviour, InputSystem_Actions.IPlayerActions, IDammag
     {
         _actions.Enable();
         Dialogue.PausePlayer += ControlInputs;
-        PauseMenu.PausePlayer += ControlInputs;
-        WinMenu.PausePlayer += ControlInputs;
+        BaseMenu.PausePlayer += ControlInputs;
+
     }
     public void OnDisable()
     {
         Dialogue.PausePlayer -= ControlInputs;
-        PauseMenu.PausePlayer -= ControlInputs;
-        WinMenu.PausePlayer -= ControlInputs;
+        BaseMenu.PausePlayer -= ControlInputs;
         _actions.Disable();
     }
     private void OnDestroy()
     {
         Dialogue.PausePlayer -= ControlInputs;
-        PauseMenu.PausePlayer -= ControlInputs;
-        WinMenu.PausePlayer -= ControlInputs;
+        BaseMenu.PausePlayer -= ControlInputs;
         _actions.Disable();
     }
     private void OnTriggerEnter2D(Collider2D collision)
