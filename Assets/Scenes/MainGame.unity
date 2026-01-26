@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72517e83e8a5f284d8963a31f284f2de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuObject: {fileID: 103073006}
+  menuObject: {fileID: 836506710}
 --- !u!4 &173047305 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 135664032458345937, guid: 52a5b7ab0c3b5ad4da7987b67422bc20, type: 3}
@@ -3536,7 +3536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a22bf9272cdf25a41a12d4ada6cec9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuObject: {fileID: 764446536}
+  menuObject: {fileID: 1918336646}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -8317,7 +8317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74754f5075098d247a62ec8312264152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuObject: {fileID: 1954829762}
+  menuObject: {fileID: 138087521}
 --- !u!1001 &1300486804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34485,7 +34485,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1294351548}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: Resume
+        m_MethodName: TogglePause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
